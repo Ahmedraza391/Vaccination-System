@@ -1,8 +1,7 @@
 feedback walay page ma massage ki jaga message karna ha ✅
 profile m image ko validate karna ha ✅
-slider m dynamic data lana h database 
-registration form m limited cheezay leni ha
+slider m dynamic data lana h database ✅
+registration form m limited cheezay leni ha ✅
 privious date disable karwani ha website m
-cancelled ka bhi notification show karwana ha
-appointment page ko check karna h
-admin panel m icons nhi arahay woh bhi check karna  ha
+appointment page ko check karna h ✅
+admin panel m icons nhi arahay woh bhi check karna  ha ✅

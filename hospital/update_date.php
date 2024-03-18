@@ -27,35 +27,19 @@
                             $assoc = mysqli_fetch_assoc($f_q_r);
                         ?>
                         <form method="POST">
-                            <input type="date" value="<?php echo $assoc['date'] ?>" class="form-control" name="date" required>
+                            <input type="date" value="<?php echo $assoc['date'] ?>" class="form-control" id="datePicker"  name="date" required>
                             <input type="submit" class="btn btn-white my-2 " value=" Add Date" name="btn_add">
                         </form>
                         <?php
                             if(isset($_POST['btn_add'])){
                                 $date = $_POST['date'];
                                 $insert_query = "UPDATE tbl_test SET date='$date' WHERE id = $id";
-                                $check_query = "SELECT * FROM tbl_notification";
-                                $count = mysqli_num_rows(mysqli_query($connection,$check_query));
-                                if($count > 0){
-                                    $i_query = "UPDATE tbl_notification SET notification='$date',status = 'unseen' WHERE id = $id";
-                                    $update_noti = mysqli_query($connection,$i_query);
-                                    $insert_res = mysqli_query($connection,$insert_query);
-                                    if($insert_res AND $update_noti){
-                                        echo "<script>
-                                            alert('Date Updated Successfully');
-                                            window.location.href = 'covid_test.php';
-                                        </script>";
-                                    }
-                                }else{
-                                    $i_query = "INSERT INTO tbl_notification(notification,p_id,t_id,h_id) VALUES('$date',$assoc[pid],$assoc[id],$assoc[hid])";
-                                    $update_noti = mysqli_query($connection,$i_query);
-                                    $insert_res = mysqli_query($connection,$insert_query);
-                                    if($insert_res AND $update_noti){
-                                        echo "<script>
-                                            alert('Date Updated Successfully');
-                                            window.location.href = 'covid_test.php';
-                                        </script>";
-                                    }
+                                $insert_res = mysqli_query($connection,$insert_query);
+                                if($insert_res){
+                                    echo "<script>
+                                        alert('Date Updated Successfully');
+                                        window.location.href = 'covid_test.php';
+                                    </script>";
                                 }
                             }
                         ?>
@@ -66,4 +50,32 @@
             <!-- Main Content End -->
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // for previous date disabled
+            var date = new Date();
+            var day = date.getDate();
+            var month = date.getMonth() + 1; // Month is zero-based
+            var year = date.getFullYear();
+
+            // Prefix single digit days and months with a '0'
+            if (day < 10) {
+                day = '0' + day;
+            }
+            if (month < 10) {
+                month = '0' + month;
+            }
+
+            var pattern = year + '-' + month + '-' + day;
+            var datePicker = document.getElementById("datePicker");
+            datePicker.setAttribute('min', pattern);
+        });
+    </script>
 <?php require("bottom.php"); ?>
+
+
+
+
+
+
+<!-- continue on web js not working in hospital directory -->

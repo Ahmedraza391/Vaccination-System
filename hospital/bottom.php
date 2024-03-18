@@ -5,6 +5,8 @@
     <script src="../admin_panel/assets/bootstrap-5/js/bootstrap.min.js"></script>
     <!-- Template Javascript -->
     <script src="../admin_panel/assets/js/main.js"></script>
+    <!-- Template Javascript -->
+    <script src="../admin_panel/assets/js/web.js"></script>
     <!-- Fontawesome js -->
     <script src="../admin_panel/assets/fontawesome/js/all.min.js"></script>
 </body>

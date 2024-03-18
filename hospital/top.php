@@ -11,7 +11,7 @@
     <link rel="icon" href="<?php if(isset($_SESSION['hospital'])){echo $_SESSION['hospital']['image'];} ?>" class="image-radius">
 
     <!-- Customized Bootstrap Stylesheet -->
-    <link rel="stylesheet" href="../admin_panel/assets/bootstrap-5/css/bootstrap.min.css">
+    <link rel="stylesheet" href="../admin_panel/assets/bootstrap-5/css//bootstrap.min.css">
 
     <!-- Template Stylesheet -->
     <link rel="stylesheet" href="../admin_panel/assets/css/style.css">

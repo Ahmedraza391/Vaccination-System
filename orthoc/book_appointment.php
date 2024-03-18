@@ -30,19 +30,30 @@ if (!isset($_SESSION['login'])) {
                     $user_not_exists = mysqli_query($connection,"SELECT * FROM tbl_test WHERE pid = $session");
                     $user_count = mysqli_num_rows($user_not_exists); 
                     // for check the user take covid test first or not
-                    $check_result = mysqli_query($connection, "SELECT * FROM tbl_test WHERE result != 'positive' AND pid = $session");
+                    $check_result = mysqli_query($connection, "SELECT * FROM tbl_test WHERE pid = $session AND result != 'positive' ");
                     $check_count = mysqli_num_rows($check_result);
                     // for check appointment booked or cancelled in his first time
-                    $validate_appointment = mysqli_query($connection,"SELECT * FROM tbl_appointment WHERE pid = $session AND status != 'booked' OR status != 'cancelled'");
+                    $validate_appointment = mysqli_query($connection,"SELECT * FROM tbl_appointment WHERE pid = $session AND status = 'booked'");
                     $validate_count = mysqli_num_rows($validate_appointment);
+                    // for check if appointment status is pending 
+                    $if_status_pending_appointment = mysqli_query($connection,"SELECT * FROM tbl_appointment WHERE pid = $session AND status = 'pending'");
+                    $status_count = mysqli_num_rows($if_status_pending_appointment);
                     if($user_count > 0){
-                        if($check_count > 0 OR $validate_count > 0){
+                        if($check_count > 0){
                             $massage = "disabled";
                         }else{
                             $massage = "";
+                            if($validate_count > 0){
+                                $massage = "disabled";
+                            }else{
+                                $massage = "";
+                                if($status_count > 0){
+                                    $massage = "disabled";
+                                }else{
+                                    $massage = "";
+                                }
+                            }
                         }
-                    }else{
-                        $massage = "disabled";
                     }
                     // for fetching data 
                     $fetch_query = mysqli_query($connection,"SELECT * FROM tbl_patient WHERE id = $session");
@@ -66,8 +77,8 @@ if (!isset($_SESSION['login'])) {
                             ?>
                         </select>
                         <div class="form-floating mb-3">
-                            <input type="date" id="txtdate" class="form-control" name="date" <?php echo $massage; ?> >
-                            <label for="txtdate">Enter Date</label>
+                            <input type="date" id="datePicker" class="form-control" name="date" <?php echo $massage; ?> >
+                            <label for="datePicker">Enter Date</label>
                         </div>
                         <select name="time" class="form-select mb-3" <?php echo $massage; ?> required>
                             <option value="" hidden>Select Any Time</option>
@@ -109,7 +120,7 @@ if (!isset($_SESSION['login'])) {
                         // continue on appointment page
                     }
                     ?>
-                    <div class="text">    
+                    <div class="massage">    
                        <span class="text-danger d-block fw-bold"><?php if(isset($_POST['bk_appointment'])){echo $massage;}else{echo "";} ?></span>
                     </div>
                 </div>

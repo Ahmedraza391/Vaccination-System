@@ -41,9 +41,6 @@ include("connection.php");
                     </form>
                     <?php
                         if(isset($_POST['update_image'])){
-                            $fetch_tbl_for_image = "SELECT * FROM tbl_patient WHERE id = $session";
-                            $fetch_tbl_result = mysqli_query($connection,$fetch_tbl_for_image);
-                            $fetch_assoc = mysqli_fetch_assoc($fetch_tbl_result);
                             $image = $_FILES['profile_image']['name'];
                             $tmp_name = $_FILES['profile_image']['tmp_name'];
                             $path = "..//admin_panel//assets//img//patients//$email//$image";
@@ -86,7 +83,8 @@ include("connection.php");
                             <input type="text" class="form-control" name="p_address" value="<?php echo $fetch_result['address']; ?>" id="paddress" placeholder="111-222-333">
                             <label for="paddress">Address</label>
                         </div>
-                        <select class="form-select mb-3" name="p_city" >
+                        <select class="form-select mb-3" name="p_city" required>
+                            <option value="" hidden>-------Select City------</option>
                             <?php 
                                 $fetch_city = "SELECT * FROM tbl_city";
                                 $fetch_city_result = mysqli_query($connection,$fetch_city);

@@ -28,12 +28,12 @@
         </div>
         <div class="navbar-nav w-100">
             <a href="index.php" class="nav-item nav-link <?php if($page == "home"){echo "active";} ?>"><i class="fa fa-tachometer-alt me-2"></i>Dashboard</a>
-            <a href="hospital.php" class="nav-item nav-link <?php if($page == "hospital"){echo "active";} ?>"><i class="fa-solid fa-hospital me-2"></i>Hospitals</a>
+            <a href="hospital.php" class="nav-item nav-link <?php if($page == "hospital"){echo "active";} ?>"><i class="fas fa-hospital me-2"></i>Hospitals</a>
             <a href="patients.php" class="nav-item nav-link <?php if($page == "patient"){echo "active";} ?>"><i class="fas fa-hospital-user me-2"></i>Patients</a>
             <a href="appointment.php" class="nav-item nav-link <?php if($page == "appointment"){echo "active";} ?>"><i class="fas fa-calendar-check me-2 "></i>Appointments</a>
             <a href="covid_test.php" class="nav-item nav-link <?php if($page == "test"){echo "active";} ?>"><i class="fas fa-vial me-2 "></i>Covid Test</a>
             <a href="view_vaccine.php" class="nav-item nav-link <?php if($page == "vaccine"){echo "active";} ?>"><i class="fas fa-syringe me-2 "></i>Vaccines</a>
-            <a href="post_slider.php" class="nav-item nav-link <?php if($page == "post_slider"){echo "active";} ?>"><i class="fas fa-comments me-2 "></i>Add Slider</a>
+            <a href="post_slider.php" class="nav-item nav-link <?php if($page == "post_slider"){echo "active";} ?>"><i class="fas fa-sliders-h me-2 "></i>Add Slider</a>
             <a href="feedback.php" class="nav-item nav-link <?php if($page == "feedback"){echo "active";} ?>"><i class="fas fa-comments me-2 "></i>Feedback</a>
             <a href="#" class="nav-item nav-link "><i class="fas fa-globe me-2 "></i>Website</a>
             <div class="nav-item dropdown">

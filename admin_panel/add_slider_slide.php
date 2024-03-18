@@ -38,10 +38,10 @@ $page = "post_slider";
                             </div>
                             <select name="s_btn_src" class="form-select mb-3" required>
                                 <option value="" hidden >Select Page</option>
-                                <option value="../orthoc//appointment.php">Appointment Page</option>
-                                <option value="../orthoc//covid-test.php">Covid-Test Page</option>
-                                <option value="..//hospital/signup.php">Hospital Register Page</option>
-                                <option value="..//orthoc/feedback.php">Feedback Page</option>
+                                <option value="../orthoc/book_appointment.php">Appointment Page</option>
+                                <option value="../orthoc/covid-test.php">Covid-Test Page</option>
+                                <option value="../hospital/signup.php">Hospital Register Page</option>
+                                <option value="../orthoc/feedback.php">Feedback Page</option>
                             </select>
                             <input type="submit" value="Add Slide" class="btn btn-white" name="add_slide">
                         </form>

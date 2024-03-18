@@ -51,11 +51,9 @@
                             $res = $_POST['res'];
                             $check = mysqli_query($connection,"SELECT * FROM tbl_test WHERE id = $id and date != '' ");
                             if(mysqli_num_rows($check) > 0 ){
-                                $n_query = "UPDATE tbl_notification SET t_result = '$res', status = 'unseen' WHERE p_id = $assoc[pid]";
-                                $n_res = mysqli_query($connection,$n_query);
                                 $query = "UPDATE tbl_test SET result = '$res' WHERE id='$id'";
                                 $result = mysqli_query($connection, $query);
-                                if ($result AND $n_res) {
+                                if ($result) {
                                     echo "
                                     <script>
                                         alert('Result Updated Successfully');

@@ -78,7 +78,6 @@ $page = "post_slider";
                                 echo "<script>alert('Slider Slide Updated Successfully');window.location.href  = 'post_slider.php'</script>";
                             }
                         }
-                        // continue on txt file work
                         // if (isset($_POST['update_slide'])) {
                         //     $heading = $_POST['s_heading'];
                         //     $para = $_POST['s_massage'];

@@ -1,4 +1,5 @@
 <?php
+session_start();
 include("connection.php");
 $id = $_GET['id'];
 $query = "UPDATE tbl_appointment SET status = 'booked' WHERE id = $id";

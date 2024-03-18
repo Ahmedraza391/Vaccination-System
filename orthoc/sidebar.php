@@ -21,9 +21,6 @@
     <li class="my-4">
       <a href="feedback.php" class="btn_sidebar">Feedback</a>
     </li>
-    <li class="my-4">
-      <a href="notification.php" class="btn_sidebar">Notifications</a>
-    </li>
     <hr class="border border-bottom border-white">
     <li class="my-4">
       <a href="../hospital/signin.php" class="btn_sidebar">Hospital Login</a>

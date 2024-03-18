@@ -16,33 +16,20 @@ session_start();
       <section class="slider_section">
         <div class="swiper mySwiper">
           <div class="swiper-wrapper">
-            <div class="swiper-slide">
-              <div class="text text-white ">
-                <h3>Take Appointment And Meet's Doctor's First</h3>
-                <p>offers the most complete and constant union of those three qualities which have the greatest charm for pure and active minds – novelty, utility, and charity.</p>
-                <div class="button">
-                  <a href="book_appointment.php" class="btn btn-green">Book Appointment</a>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="text text-white ">
-                <h3>Being a doctor</h3>
-                <p>offers the most complete and constant union of those three qualities which have the greatest charm for pure and active minds – novelty, utility, and charity.</p>
-                <div class="button">
-                  <a href="book_appointment.php" class="btn btn-green">Book Appointment</a>
-                </div>
-              </div>
-            </div>
-            <div class="swiper-slide">
-              <div class="text text-white ">
-                <h3>Our Doctor's Say's</h3>
-                <p>I always tell my residents to never forget that we have the opportunity to do more good in one day than most people have in a month.</p>
-                <div class="button">
-                  <a href="book_appointment.php" class="btn btn-green">Book Appointment</a>
-                </div>
-              </div>
-            </div>
+            <?php 
+              $fetch_query = mysqli_query($connection,"SELECT * FROM tbl_slider WHERE status = 'show'");
+              foreach($fetch_query as $fetch ){
+                echo "<div class='swiper-slide'>";
+                  echo "<div class='text text-white '>";
+                    echo "<h3>$fetch[heading]</h3>";
+                    echo "<p>$fetch[para]</p>";
+                    echo "<div class='button'>";
+                    echo "<a href='$fetch[btn_src]' class='btn btn-green'>$fetch[btn_name]</a>";
+                    echo "</div>";
+                  echo "</div>";
+                echo "</div>";
+              }
+            ?>
           </div>
           <div class="swiper-button-next"></div>
           <div class="swiper-button-prev"></div>

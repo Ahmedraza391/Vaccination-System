@@ -22,7 +22,7 @@
                         <a href="covid_test.php" class="btn btn-white btn-sm my-2">/ Back</a>
                         <h2>Add Date :</h2>
                         <form method="POST">
-                            <input type="date" class="form-control" name="date" required>
+                            <input type="date" class="form-control" id="datePicker" name="date" required>
                             <input type="submit" class="btn btn-white my-2 " value=" Add Date" name="btn_add">
                         </form>
                         <?php
@@ -30,10 +30,9 @@
                             $assoc = mysqli_fetch_assoc($f_query);
                             if(isset($_POST['btn_add'])){
                                 $date = $_POST['date'];
-                                $insert_query = mysqli_query($connection,"INSERT INTO tbl_notification(notification,p_id,t_id,h_id)VALUES('$date',$assoc[pid],$assoc[id],$assoc[hid])");
                                 $up_query = "UPDATE tbl_test SET date = '$date' WHERE id = $assoc[id]";
                                 $res = mysqli_query($connection,$up_query);
-                                if($res and $insert_query){
+                                if($res){
                                     echo "<script>
                                         alert('Date Added Successfully');
                                         window.location.href = 'covid_test.php';
@@ -48,4 +47,25 @@
             <!-- Main Content End -->
         </div>
     </div>
+    <script>
+        document.addEventListener("DOMContentLoaded", function() {
+            // for previous date disabled
+            var date = new Date();
+            var day = date.getDate();
+            var month = date.getMonth() + 1; // Month is zero-based
+            var year = date.getFullYear();
+
+            // Prefix single digit days and months with a '0'
+            if (day < 10) {
+                day = '0' + day;
+            }
+            if (month < 10) {
+                month = '0' + month;
+            }
+
+            var pattern = year + '-' + month + '-' + day;
+            var datePicker = document.getElementById("datePicker");
+            datePicker.setAttribute('min', pattern);
+        });
+    </script>
 <?php require("bottom.php"); ?>

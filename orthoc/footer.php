@@ -28,20 +28,6 @@
               </div>
             </div>
           </div>
-          <div class="footer_social">
-            <a href="">
-              <i class="fa fa-facebook" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-twitter" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-linkedin" aria-hidden="true"></i>
-            </a>
-            <a href="">
-              <i class="fa fa-instagram" aria-hidden="true"></i>
-            </a>
-          </div>
         </div>
         <div class="col-md-4 col-lg-4 footer_col">
           <div class="footer_detail">
@@ -59,21 +45,37 @@
               Links
             </h4>
             <div class="footer_links">
-              <a class="active" href="index.html">
-                Home
-              </a>
-              <a class="" href="about.html">
-                About
-              </a>
-              <a class="" href="departments.html">
-                Departments
-              </a>
-              <a class="" href="doctors.html">
-                Doctors
-              </a>
-              <a class="" href="contact.html">
-                Contact Us
-              </a>
+              <div class="links footer_links">
+                <a class="active" href="index.html">
+                  Home
+                </a>
+                <a class="" href="about.html">
+                  About
+                </a>
+                <a class="" href="departments.html">
+                  Departments
+                </a>
+                <a class="" href="doctors.html">
+                  Doctors
+                </a>
+                <a class="" href="contact.html">
+                  Contact Us
+                </a>
+              </div>
+              <div class="footer_social">
+                <a href="#">
+                  <i class="fab fa-facebook"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-twitter-square"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-linkedin"></i>
+                </a>
+                <a href="#">
+                  <i class="fab fa-instagram"></i>
+                </a>
+              </div>
             </div>
           </div>
         </div>
